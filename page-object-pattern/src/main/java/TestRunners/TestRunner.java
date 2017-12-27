@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.runner.Result;
 
 public class TestRunner{
+	private static int key = 1;
 	static String className;
 	private static String reportHeader = "<html>\r\n" + 
 			"    <head>\r\n" + 
@@ -130,8 +131,8 @@ public class TestRunner{
 	}
 	//add failures to html
 	public static void reportFailure(String testCaseName,  String failureMessage) throws IOException{
-		int key = 1;
-		junitWriter.write("<tr><th>" + key++ + "</th><th><span style=\"color:red;\">FAILED</span></th><th>" + testCaseName + "</th><th>" + failureMessage + "</th></tr>");
+		junitWriter.write("<tr><th>" + key + "</th><th><span style=\"color:red;\">FAILED</span></th><th>" + testCaseName + "</th><th>" + failureMessage + "</th></tr>");
+		key++;
 	}
 	
 
