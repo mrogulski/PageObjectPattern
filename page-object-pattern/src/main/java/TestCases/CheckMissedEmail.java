@@ -10,7 +10,7 @@ public class CheckMissedEmail extends TestCase{
 	
 	private static String username = "thatUserNameNotExistInDatabaseForSure";
 	private static String email = "";
-	private static String expectedErrorMessage = "ERROR: Please type your email address.";
+	private static String expectedErrorMessage = "ERROR: Please type your email addressxxx.";
 	
 	@Test
 	public void checkIfMissedEmailErrorAppears(){
