@@ -18,7 +18,7 @@ public class TestCaseGrid {
 	
 	@Before
 	public void setUp() throws MalformedURLException {
-// simple way
+// 		simple way
 //		DesiredCapabilities capabilities =  DesiredCapabilities.firefox();
 		capabilities = new DesiredCapabilities();
 		capabilities.setBrowserName("firefox");

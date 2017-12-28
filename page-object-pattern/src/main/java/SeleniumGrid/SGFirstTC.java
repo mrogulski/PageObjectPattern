@@ -8,7 +8,7 @@ import Pages.MainPage;
 
 public class SGFirstTC extends TestCaseGrid {
 	
-	private static String expectedHeader = "Accessoriessss";
+	private static String expectedHeader = "Accessoriesssss";
 	
 
 	@Test
