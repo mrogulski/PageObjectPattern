@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.Select;
 public class CalculateShippingPricePage extends Page {
 	
 	private static By shippingCountrDropdownLocator = By.xpath("//select[@name='country']");
+	private static By calculateLocator = By.xpath("//input[@value='Calculate']");
+	private static By totalShippingLocator = By.xpath("//*[@id=\"wpsc_shopping_cart_container\"]/form/div[3]/table/tbody/tr[2]/td[2]/span/span");
 	private static By emailLocator = By.id("wpsc_checkout_form_9");
 	//billing details locators
 	private static By billingNameLocator = By.id("wpsc_checkout_form_2");
@@ -26,10 +28,20 @@ public class CalculateShippingPricePage extends Page {
 
 	}
 	
-	public void selectShippingCountry(String country) {
+	public String calculateShippingPrice(String country) {
 		WebElement dropdown = driver.findElement(shippingCountrDropdownLocator);
 		Select cuntryDropdown = new Select(dropdown);
 		cuntryDropdown.selectByVisibleText(country);
+		
+		WebElement calculate = driver.findElement(calculateLocator);
+		calculate.click();
+		
+		waitUntilItemsDisplayed(totalShippingLocator);
+		
+		WebElement totalShipping = driver.findElement(totalShippingLocator);
+		String shippingAmount = totalShipping.getText();
+				
+		return shippingAmount;
 	}
 	
 	public void provideEmail(String email) {
