@@ -29,7 +29,7 @@ public class MainPage extends Page {
 		//find and click on category
 		WebElement categoryPage =  driver.findElement(By.xpath("//*[contains(text(), '" + category + "')]"));
 		action.moveToElement(categoryPage).click().perform();
-		
+			
 		return new CategoryPage(driver);
 		
 	}

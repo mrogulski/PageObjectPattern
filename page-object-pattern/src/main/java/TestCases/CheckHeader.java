@@ -17,7 +17,7 @@ public class CheckHeader extends TestCase  {
 		CategoryPage categoryPage = new MainPage(driver).goToCategory("Accessories");
 		
 		String pageHeader = categoryPage.getHeader().getText();
-		//comment
+
 		Assert.assertTrue("FAILED! Section header is:  " + pageHeader, pageHeader.equals(expectedHeader));
 	}
 

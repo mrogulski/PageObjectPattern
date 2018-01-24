@@ -2,7 +2,6 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class CartPage extends Page {
 
@@ -17,13 +16,11 @@ public class CartPage extends Page {
 		driver.findElement(continueButtonSelector).click();
 		return new CalculateShippingPricePage(driver);
 	}
-	//method takes index of needed input and returns input field element
-	public WebElement quantityInputField(int index) {
-		//finds element by provided index and return it
-		By quantityInputSelector = By.cssSelector(".wpsc_product_quantity_"+ index + " > form:nth-child(1) > input:nth-child(1)");
-		WebElement quantityInput = driver.findElement(quantityInputSelector);
-		return quantityInput;
+
+	
+	public CartsPageItem gotoItem(String item) {
 		
+		return new CartsPageItem(driver, item);
 	}
 
 

@@ -22,6 +22,7 @@ public abstract class Page {
 	
 	public CartPage goToCartPage() {
 		driver.findElement(cartSelector).click();
+		waitUntilItemsDisplayed(By.id("checkout_page_container"));
 		return new CartPage(driver);
 	}
 
