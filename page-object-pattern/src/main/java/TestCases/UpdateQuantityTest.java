@@ -2,7 +2,6 @@ package TestCases;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.WebElement;
 
 import Pages.CartPage;
 import Pages.CartsPageItem;
