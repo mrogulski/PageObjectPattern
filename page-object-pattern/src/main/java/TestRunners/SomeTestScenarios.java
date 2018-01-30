@@ -33,7 +33,7 @@ public class SomeTestScenarios extends TestRunner {
 				System.out.println(failure.getTestHeader());
 				reportFailure(failure.getTestHeader(),  failure.getMessage());
 			}
-			
+			//commit just to check something
 			//close html doc
 			tearDown();
 			//This will print the overall test result in boolean type
