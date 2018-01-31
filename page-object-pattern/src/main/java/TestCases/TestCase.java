@@ -1,21 +1,21 @@
 package TestCases;
 
-import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import org.testng.annotations.*;
 
 public abstract class TestCase {
 	
 	protected WebDriver driver;
 	
-	@Before
+	@BeforeClass
 	public void setUp() {
 		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 	}
 	
-	@After
+	@AfterClass
 	public void cleanUp() {
 		driver.quit();
 	}
