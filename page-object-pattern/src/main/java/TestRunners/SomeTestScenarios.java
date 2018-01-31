@@ -5,7 +5,7 @@ import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 
-import TestCases.CheckHeader;
+import TestCases.CheckHeaderTest;
 import TestCases.CheckIncorrectLogin;
 import TestCases.CheckInvalidRegistration;
 import TestCases.CheckMissedEmail;
@@ -16,7 +16,7 @@ public class SomeTestScenarios extends TestRunner {
 	public static void main(String[] args) throws IOException {
 		
 			//This statement is to load all type of results in the result object
-			Result result = JUnitCore.runClasses(CheckHeader.class, CheckMissedEmail.class, CheckIncorrectLogin.class, CheckInvalidRegistration.class);
+			Result result = JUnitCore.runClasses(CheckHeaderTest.class, CheckMissedEmail.class, CheckIncorrectLogin.class, CheckInvalidRegistration.class);
 			//Here it is getting the run count from the result object
 			System.out.println("Total number of tests " + result.getRunCount());
 			//This is to get the failure count from the result object
