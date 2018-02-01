@@ -4,6 +4,39 @@
   <artifactId>page-object-pattern</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>page-object-pattern</name>
+  <profiles>
+    <profile>
+        <id>Base configuration</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <build>
+            <defaultGoal>install</defaultGoal>
+            <plugins>                    
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.19.1</version>
+                    <inherited>true</inherited>
+                    <executions>
+                        <execution>
+                            <phase>test</phase>
+                            <goals>
+                                <goal>test</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+						<suiteXmlFiles>
+    						<!-- pass testng.xml files as argument from command line -->
+    						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+						</suiteXmlFiles>                           
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
+</profiles>
   <dependencies>
   	<dependency>
   		<groupId>org.seleniumhq.selenium</groupId>
