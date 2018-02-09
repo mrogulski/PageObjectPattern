@@ -12,7 +12,7 @@ public abstract class TestCase {
 	
 	@BeforeClass
 	public void setUp() {
-		System.setProperty("webdriver.chrome.driver","C:\ChromeDriver\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:\\ChromeDriver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 	}
